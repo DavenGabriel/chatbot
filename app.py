@@ -2,9 +2,11 @@ import os
 from flask import Flask, render_template, request, jsonify
 from google.cloud import aiplatform as genai
 
-# Konfigurasi API Key untuk Google Gemini
-api_key = "AIzaSyAwCz9qh2d8geT2y_I3H5Lcy5Z0Yp66-Io"
-genai.configure(api_key=api_key)
+# Inisialisasi Google AI Platform
+genai.init(
+    project="gen-lang-client-0339285527",
+    location="us-central1"  # Sesuaikan dengan lokasi model
+)
 
 # Konfigurasi model Gemini
 generation_config = {
