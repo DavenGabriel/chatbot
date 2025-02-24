@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, jsonify
 import google.generativeai as genai
-from google import genai
 
 # Konfigurasi API Key untuk Google Gemini
 api_key = "AIzaSyAwCz9qh2d8geT2y_I3H5Lcy5Z0Yp66-Io"
@@ -53,4 +52,4 @@ def gemini_api():
 
 # Jalankan aplikasi Flask
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0', port=8080)
